@@ -38,6 +38,8 @@
 
 /* Indications */
 #    define CAPS_LOCK_INDEX 48
+#    define CAPS_LOCK_INDICATOR_COLOR \
+        200, 200, 0
 #    define LOW_BAT_IND_INDEX \
         { 82, 84 }
 

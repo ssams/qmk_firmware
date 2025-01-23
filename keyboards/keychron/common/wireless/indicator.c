@@ -623,7 +623,11 @@ __attribute__((weak)) void os_state_indicate(void) {
 #        if defined(DIM_CAPS_LOCK)
         SET_LED_OFF(CAPS_LOCK_INDEX);
 #        else
-        SET_LED_ON(CAPS_LOCK_INDEX);
+#          if defined(RGB_MATRIX_ENABLE) && defined(CAPS_LOCK_INDICATOR_COLOR)
+             rgb_matrix_set_color(CAPS_LOCK_INDEX, CAPS_LOCK_INDICATOR_COLOR);
+#          else
+             SET_LED_ON(CAPS_LOCK_INDEX);
+#          endif
 #        endif
     }
 #    endif
